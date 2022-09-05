@@ -58,10 +58,10 @@ sonarqube {
     properties {
         property "sonar.projectName", "Android-CICD"
         property "sonar.projectKey", "Android-CICD"
-        property "sonar.tests", ["src/test/java", "src/test/kotlin"]
+        // property "sonar.tests", ["src/test/java", "src/test/kotlin"]
         property "sonar.java.coveragePlugin", "jacoco"
         property "sonar.jacoco.reportPath", "**/jacoco/*.exec"
-        // property "sonar.tests", ["src/test/java"]
+        property "sonar.tests", ["src/test/java"]
         property "sonar.test.inclusions", "**/*Test*/**"
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.sources", "src/main/java"
