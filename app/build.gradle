@@ -8,7 +8,7 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'org.sonarqube'
 
-apply plugin: 'jacoco-android'
+// apply plugin: 'jacoco-android'
 
 android {
     compileSdkVersion 29
