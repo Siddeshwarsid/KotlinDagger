@@ -25,8 +25,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            testCoverageEnabled true
         }
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.all {
+            jacoco {
+                includeNoLationClasses = true
+                }
+            }
+       }
 }
 
 dependencies {
@@ -63,3 +72,12 @@ sonarqube {
                 '**/R.class'
                }
           }
+ jacoco {
+    toolVersion = "0.8.4"
+    reportsDir = file("$buildDir/reports")
+    }
+
+tasks.withType (Test) {
+    jacoco.includeNoLocationClasses = true
+    }
+
