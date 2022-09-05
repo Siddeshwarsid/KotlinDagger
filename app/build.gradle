@@ -47,8 +47,11 @@ dependencies {
 
 sonarqube {
     properties {
-        property "sonar.projectName", "sonarQube-Run"
-        property "sonar.projectKey", "sonarQube-Run"
+        property "sonar.projectName", "Android-CICD"
+        property "sonar.projectKey", "Android-CICD"
+        property "sonar.tests", ["src/test/java", "src/test/kotlin"]
+        property "sonar.java.coveragePllugin", "jacoco"
+        property "sonar.jacoco.reportPath", "**/jacoco/*.exec"
         property "sonar.tests", ["src/test/java"]
         property "sonar.test.inclusions", "**/*Test*/**"
         property "sonar.sourceEncoding", "UTF-8"
