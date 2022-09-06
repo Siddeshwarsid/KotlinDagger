@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/Siddeshwarsid00/KotlinDagger.git'
+                git 'https://github.com/Siddeshwarsid/KotlinDagger.git'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh 'gradle sonarqube'
+                    sh 'gradle sonarqube -Dsonar.host.url=http://35.174.114.40:9000 -Dsonar.login=ba34472cfa6ce6da66ff7b80a3e45cff1cc52ca5'
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    waitForQualityGate abortPipeline: true, credentialsId: 'sonar-1'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar7.5-comminity'
                 }
             }
         }
