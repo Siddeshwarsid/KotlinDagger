@@ -69,7 +69,8 @@ sonarqube {
                 '*.json,' +
                 '**/*test*/**,' +
                 '**/.gradle/**,' +
-                '**/R.class'
+                '**/R.class,'
+                '**/R$*.class'
                }
           }
  jacoco {
